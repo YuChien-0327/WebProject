@@ -6,7 +6,7 @@ function display(search){
     let year = search.split("?")[1];
     console.log(year);
     $.ajax({
-        url: "http://localhost/workSpace/WebProject/php/showWords.php",
+        url: "http://localhost/workSpace/web_project/php/showWords.php",
         type: "POST",
         data: { "year": year }, 
     })

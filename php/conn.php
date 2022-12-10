@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 $dbServerName = "localhost";
 $dbUserName = "root";
-$dbPwd = "as0955104359";
-$dbName = "webproject";
+$dbPwd = "Cherry900327";
+$dbName = "web_project";
 
 // 伺服器設定
 // $dbServerName = "localhost";
