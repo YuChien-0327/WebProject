@@ -12,22 +12,29 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script src="js/showWords.js"></script>
+        <script src="js/translate.js"></script>
+        <link href="css/table.css" rel="stylesheet" />
+        <link href="css/translate.css" rel="stylesheet" />
+        <link href="css/body.css" rel="stylesheet" />
 
     </head>
     <body>
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper" >
-                <div class="sidebar-heading border-bottom bg-light">英文單字報佛腳</div>
+            <div class="border-end" id="sidebar-wrapper" style="background-color: rgb(243, 239, 255);">
+                <div class="sidebar-heading border-bottom " style="background-color: rgb(229, 223, 255);" align="center">
+                    <img src="img/system.png" style="width: 150px;">
+                </div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3 translate_button" href="#!">translate</a>
+                    <a class="list-group-item list-group-item-action p-3 translate_button" href="#!">translate</a>
                     <div class="translate_div"> 
                         <div class="translate_txt">
-                            <P style="padding: 10px;">translate now!!!!</P>
-                            
-                            <p style="padding: 10px;">English word：<input placeholder="apple" id="en_word"></p>
-                            <p style="padding: 10px;">Chinese word：<input placeholder="蘋果" id="zh_word"></p>
                             <div align="center">
+                                <img src="img/translate.png" style="width: 50%; margin: 20px;">                            
+                            </div>
+                            <p style="padding: 10px;">English word：<input placeholder="apple" id="en_word" type="text"></p>
+                            <p style="padding: 10px;">Chinese word：<input placeholder="蘋果" id="zh_word" type="text"></p>
+                            <div align="center" style="padding-bottom: 20px;">
                                 <button id="translate" class="btn">translate</button>
                                 <button id="add" class="btn">add</button>
                                 <button id="clear" class="btn">clear</button>
@@ -35,24 +42,24 @@
                             </div>
                         </div>
                     </div> 
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?109">109</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?108">108</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?107">107</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?106">106</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?105">105</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?104">104</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?103">103</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?102">102</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?101">101</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="words.html?100">100</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?109">109</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?108">108</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?107">107</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?106">106</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?105">105</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?104">104</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?103">103</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?102">102</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?101">101</a>
+                    <a class="list-group-item list-group-item-action p-3" href="words.html?100">100</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
             <div id="page-content-wrapper">
                 <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background-color: rgb(243, 239, 255);">
                     <div class="container-fluid">
-                        <button class="btn btn-primary" id="sidebarToggle">Menu</button>
+                        <button class="btn" id="sidebarToggle">Menu</button>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
@@ -76,7 +83,10 @@
                     <table id="display" style="width: 100%;" border="1">
                         <thead>
                             <tr>
-                                <th>English</th>
+                                <th>
+                                    English
+                                    <button id="hide" class="btn">hide</button>
+                                </th>
                                 <th>Chinese</th>
                                 <th>Error</th>
                             </tr>
