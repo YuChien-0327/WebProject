@@ -6,13 +6,13 @@ $(document).ready(function(){
 function login(userName, userPwd){
     $.ajax({
         type : "POST",
-        url : "http://localhost/WorkSpace/WebProject/php/login.php",
+        url : "http://localhost/WorkSpace/web_project/php/login.php",
         data : {"userName" : userName, "userPwd" : userPwd},
     })
     .done(function(data){
         if(data == "登入成功"){
             alert("登入成功");
-            location.href = "http://localhost/workSpace/WebProject/index.html";
+            location.href = "http://localhost/workSpace/web_project/index.html";
         }
         else if(data == "密碼錯誤"){
             alert("密碼錯誤");

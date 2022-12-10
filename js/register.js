@@ -7,13 +7,13 @@ function register(userName, userPwd, userCkPwd){
     if(userPwd == userCkPwd){
         $.ajax({
             type : "POST",
-            url : "http://localhost/WorkSpace/WebProject/php/register.php",
+            url : "http://localhost/WorkSpace/web_project/php/register.php",
             data : {"userName" : userName, "userPwd" : userPwd},
         })
         .done(function(data){
             if(data == "success"){
                 alert("註冊成功");
-                location.href = "http://localhost/workSpace/WebProject/login.html"
+                location.href = "http://localhost/workSpace/web_project/login.html"
             }
             else if(data == "使用者名稱已註冊"){
                 alert("使用者名稱已註冊")
