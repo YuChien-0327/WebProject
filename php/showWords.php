@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 require_once "conn.php";
 $data = $_POST;
 $sql = "SELECT * FROM `vocabulary` WHERE `year` = {$data['year']}";
