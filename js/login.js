@@ -12,7 +12,7 @@ function login(userName, userPwd){
     .done(function(data){
         if(data == "登入成功"){
             alert("登入成功");
-            location.href = "http://localhost/workSpace/web_project/index.html";
+            location.href = "http://localhost/workSpace/web_project/index.html?"+userName;
         }
         else if(data == "密碼錯誤"){
             alert("密碼錯誤");
