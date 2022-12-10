@@ -10,6 +10,8 @@
         <!-- Favicon-->
         <!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />-->
         <!-- Core theme CSS (includes Bootstrap)-->
+        <script src="js/index.js"></script>
+
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/translate.css" rel="stylesheet" />
         <link href="css/table.css" rel="stylesheet" />
@@ -86,14 +88,19 @@
                             <tr>
                                 <th>
                                     English
-                                    <button id="hide" class="btn">hide</button>
+                                    <button id="hideEn" class="btn">hide</button>
+                                    <button id="showEn" class="btn">show</button>
                                 </th>
                                 <th>Chinese</th>
                                 <th>Error</th>
                             </tr>
                         </thead>
                         <tbody id="show">
-
+                            <tr>
+                                <th><input type="text" value="apple" id="english"></th>
+                                <th>蘋果</th>
+                                <th>0</th>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

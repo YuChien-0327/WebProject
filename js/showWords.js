@@ -1,5 +1,15 @@
 $(document).ready(function() {
     display(location.search);
+    $("#hideEn").click(function(){
+        console.log("hide");
+        $("input").attr("disabled", false);
+        $("input").val("");
+        $("input").css("border", "3px solid rgb(229, 223, 255)");
+    })
+    $("#showEn").click(function(){
+        document.getElementById("show").innerHTML = "";
+        display(location.search);
+    })
 });
 
 function display(search){
@@ -15,10 +25,14 @@ function display(search){
         let tbody = document.getElementById("show");
         for(i = 0; i < 60; i++){
             let tr = document.createElement("tr");
+            let input = document.createElement("input");
+            input.value = obj[0][i];
+            input.type = "text";
+            input.disabled = "true";
             let th1 = document.createElement("th");
             let th2 = document.createElement("th");
             let th3 = document.createElement("th");
-            th1.innerHTML = obj[0][i];
+            th1.appendChild(input);
             th2.innerHTML = obj[1][i];
             th3.innerHTML = 0;
             tr.appendChild(th1);
