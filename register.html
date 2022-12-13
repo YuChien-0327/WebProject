@@ -17,14 +17,18 @@
 
 
     </head>
-    <body style="background-color: rgb(236, 230, 255); margin: 0;" align="center">  
+    <body style="background-color: rgb(236, 230, 255); margin: 0; display: flex; justify-content: center; flex-direction: column; align-items: center;">  
 
         <h1 class="title">Please input your register name and password!!</h1>       
 
-        <p style="padding: 10px;">User's name：<input id="regName" name="userName" type="text" placeholder="name"></p>
-        <p style="padding: 10px;">Password：<input id="regPwd" name="userPwd" type="password" placeholder="密碼 Password"></p>
-        <p style="padding: 10px;">Confirm password： <input id="checkPwd" name="checkPwd" type="password" placeholder="Confirm password"></p>
-        <a href="login.html" style="color: #B0B0B0; padding: 10px;">login now</a>
-        <button id="regSubmit" class="btn">register</button>
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <p style="padding: 10px;">User's name：<input id="regName" name="userName" type="text" placeholder="name"></p>
+            <p style="padding: 10px;">Password：<input id="regPwd" name="userPwd" type="password" placeholder="密碼 Password"></p>
+            <p style="padding: 10px;">Confirm password： <input id="checkPwd" name="checkPwd" type="password" placeholder="Confirm password"></p>
+            
+            <p><a href="login.html" style="color: #B0B0B0; padding: 10px;">login now</a>
+                <button id="regSubmit" class="btn">register</button></p> 
+        </div>
+
     </body>
 </html>

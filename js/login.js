@@ -3,6 +3,8 @@ $(document).ready(function(){
         login($("#loginName").val(), $("#loginPwd").val());
     });
 });
+
+
 function login(userName, userPwd){
     $.ajax({
         type : "POST",
@@ -12,7 +14,7 @@ function login(userName, userPwd){
     .done(function(data){
         if(data == "登入成功"){
             alert("登入成功");
-            location.href = "http://localhost/workSpace/web_project/index.html?"+userName;
+            location.href = "http://localhost/workSpace/web_project/index.html?user="+userName + "&year=index";
         }
         else if(data == "密碼錯誤"){
             alert("密碼錯誤");

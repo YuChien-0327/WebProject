@@ -28,7 +28,6 @@ input[type="text"]:focus,  input[type="password"]:focus {
 @keyframes type{ 
     from { width: 0; } 
 } 
-  
 
 .btn {
     display: inline-block;

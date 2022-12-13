@@ -1,26 +1,45 @@
 $(document).ready(function() {
     display(location.search);
+    $("#submit").attr("disabled", true);
+    $("#showEn").attr("disabled", true);
     $("#hideEn").click(function(){
+        $("#hideEn").attr("disabled", true);
+        $("#showEn").attr("disabled", false);
+        $("#submit").attr("disabled", false);
         $("input").attr("disabled", false);
         $("input").val("");
         $("input").css("border", "3px solid rgb(229, 223, 255)");
     })
     $("#showEn").click(function(){
+        $("#hideEn").attr("disabled", false);
+        $("#showEn").attr("disabled", true);
+        $("#submit").attr("disabled", true);
         document.getElementById("show").innerHTML = "";
         display(location.search);
     })
     $("#submit").click(function(){
         check();
+        location.reload()
     })
 });
 
+function getUrlVars(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 function display(search){
-    let year = search.split("?")[1];
-    console.log(year);
+    let vars = getUrlVars();
     $.ajax({
         url: "http://localhost/workSpace/web_project/php/showWords.php",
         type: "POST",
-        data: { "year": year }, 
+        data: { "year": vars["year"]}, 
     })
     .done(function(data){
         let obj = JSON.parse(data);
