@@ -1,7 +1,6 @@
 $(document).ready(function() {
     display(location.search);
     $("#hideEn").click(function(){
-        console.log("hide");
         $("input").attr("disabled", false);
         $("input").val("");
         $("input").css("border", "3px solid rgb(229, 223, 255)");
@@ -9,6 +8,9 @@ $(document).ready(function() {
     $("#showEn").click(function(){
         document.getElementById("show").innerHTML = "";
         display(location.search);
+    })
+    $("#submit").click(function(){
+        check();
     })
 });
 
@@ -34,11 +36,29 @@ function display(search){
             let th3 = document.createElement("th");
             th1.appendChild(input);
             th2.innerHTML = obj[1][i];
-            th3.innerHTML = 0;
+            th3.innerHTML = obj[2][i];
             tr.appendChild(th1);
             tr.appendChild(th2);
             tr.appendChild(th3);
             tbody.appendChild(tr);
         }
+    })
+}
+
+function check(){
+    let year = location.search.split("?")[1];
+    let arr = [];
+    $("input").each(function(){
+        arr.push($(this).val());
+    })
+    jsonArr = JSON.stringify(arr);
+    console.log(jsonArr);
+    $.ajax({
+        url : "http://localhost/workSpace/web_project/php/check.php",
+        type : "POST",
+        data : {"year" : year, "data" : jsonArr},
+    })
+    .done(function(data){
+        
     })
 }

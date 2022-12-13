@@ -19,6 +19,7 @@ function register(userName, userPwd, userCkPwd){
                 alert("使用者名稱已註冊")
             }
             else{
+                console.log(data);
                 alert("註冊失敗");
             }
         })

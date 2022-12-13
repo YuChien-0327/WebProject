@@ -1,17 +1,18 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+require_once "conn.php";
 
 $data = $_POST;
-$link = mysqli_connect("localhost", "root", "Cherry900327", "web_project");
 $userName = $data["userName"];
 $userPwd = $data["userPwd"];
 
 $sql = "SELECT * FROM `user` WHERE `user_name` = '{$userName}'";
-$result = mysqli_query($link, $sql);
+$result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0){
     $row = mysqli_fetch_assoc($result);
     if(password_verify($userPwd, $row["user_password"])){
+        session_start();
+        $_SESSION["userName"] = $userName;
         echo "登入成功";
     }
     else{
