@@ -27,8 +27,8 @@ function getUrlVars(){
 
 function setUrl(){
     let vars = getUrlVars();
+    $("#home").attr("href", "http://localhost/workSpace/web_project/index.html?user="+vars["user"] + "&year=index");
     for(let i=109; i>=100; i--){
-
         $("#"+i).attr("href", "words.html?user="+vars["user"] + "&year=" + i);
     }
 }
