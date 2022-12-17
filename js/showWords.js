@@ -65,8 +65,11 @@ function display(search){
 }
 
 function check(){
-    let year = location.search.split("?")[1];
+    let str = location.search.split("?")[1];
+    str = str.split("=");
+    let year = str[2];
     let arr = [];
+    console.log(year);
     $("input").each(function(){
         arr.push($(this).val());
     })
@@ -78,6 +81,6 @@ function check(){
         data : {"year" : year, "data" : jsonArr},
     })
     .done(function(data){
-        
+        console.log(data);
     })
 }
