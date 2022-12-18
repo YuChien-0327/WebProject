@@ -2,9 +2,7 @@ $(document).ready(function(){
     $("#translate").click(function(){translate();});
     $("#add").click(function(){add();});
     $("#clear").click(function(){clear();});
-    $("#delete").click(function(){
-        del();
-    });
+    $("#delete").click(function(){del();});
 });
 
 function del(){
@@ -16,6 +14,7 @@ function del(){
     })
     .done(function(data){
         console.log(data);
+        location.reload()
     })
 }
 
@@ -29,7 +28,7 @@ function translate(){
 
     console.log(enText + " " + zhText);
 
-    if(enText == ""){
+    if(enText == ""){ //中翻英
         sourceText = zhText;
         targetLang = "en";
         sourceLang = "zh-TW";
@@ -50,13 +49,12 @@ function translate(){
     });
 
 }
+
 function add(){
     console.log("add");
     var enText = $("#en_word").val();
     var zhText = $("#zh_word").val();
-    if(enText == "" || zhText == ""){
-        alert("請先翻譯完成後再加入列表");
-    }
+    if(enText == "" || zhText == ""){ alert("請先翻譯完成後再加入列表"); }
     else{
         $.ajax({
             url: "http://localhost/workSpace/web_project/php/addV.php",
@@ -65,9 +63,11 @@ function add(){
         })
         .done(function(data){
             console.log(data);
+            location.reload()
         })
     }
 }
+
 function clear(){
     $("#en_word").val("");
     $("#zh_word").val("");

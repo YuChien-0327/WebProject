@@ -67,26 +67,4 @@ jQuery(document).ready(function($){
       } 
     }); 
    
-    //切換表單 
-    /*$form_modal_tab.on('click', function(event) { 
-      event.preventDefault(); 
-      ( $(event.target).is( $tab_login ) ) ? login_selected() : signup_selected(); 
-    }); */
-   
-    /*function login_selected(){ 
-      $form_login.addClass('is-selected'); 
-      $form_signup.removeClass('is-selected'); 
-      $form_forgot_password.removeClass('is-selected'); 
-      $tab_login.addClass('selected'); 
-      $tab_signup.removeClass('selected'); 
-    } */
-   
-    /*function signup_selected(){ 
-      $form_login.removeClass('is-selected'); 
-      $form_signup.addClass('is-selected'); 
-      $form_forgot_password.removeClass('is-selected'); 
-      $tab_login.removeClass('selected'); 
-      $tab_signup.addClass('selected'); 
-    } */
-   
   }); 

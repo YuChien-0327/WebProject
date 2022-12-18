@@ -42,6 +42,7 @@ function display(search){
         data: { "year": vars["year"]}, 
     })
     .done(function(data){
+        console.log(data);
         let obj = JSON.parse(data);
         let tbody = document.getElementById("show");
         for(i = 0; i < 60; i++){
@@ -100,7 +101,7 @@ function check(){
         year = 200;
     }
     console.log(year);
-    $("input").each(function(){
+    $("input").each(function(){ 
         arr.push($(this).val());
     })
     jsonArr = JSON.stringify(arr);
