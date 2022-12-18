@@ -13,6 +13,7 @@ if(mysqli_num_rows($result) > 0){
     if(password_verify($userPwd, $row["user_password"])){
         session_start();
         $_SESSION["userName"] = $userName;
+        $_SESSION["id"] = $row["user_id"];
         echo "登入成功";
     }
     else{

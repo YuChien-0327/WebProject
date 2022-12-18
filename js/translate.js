@@ -40,7 +40,20 @@ function add(){
     console.log("add");
     var enText = $("#en_word").val();
     var zhText = $("#zh_word").val();
-    if(enText == "" || zhText == "") alert("請先翻譯完成後再加入列表");
+    if(enText == "" || zhText == ""){
+        alert("請先翻譯完成後再加入列表");
+    }
+    else{
+        $.ajax({
+            url: "http://localhost/workSpace/web_project/php/addV.php",
+            type: "POST",
+            data: {"en" : enText, "zh" : zhText},
+        })
+        .done(function(data){
+            console.log(data);
+            location.reload();
+        })
+    }
 }
 function clear(){
     $("#en_word").val("");

@@ -30,4 +30,5 @@ function setUrl(){
     for(let i=109; i>=100; i--){
         $("#"+i).attr("href", "words.html?user="+vars["user"] + "&year=" + i);
     }
+    $("#your").attr("href", "words.html?user="+vars["user"] + "&year=your");
 }

@@ -62,6 +62,33 @@ function display(search){
             tbody.appendChild(tr);
         }
     })
+
+    $.ajax({
+        url: "http://localhost/workSpace/web_project/php/yourWords.php",
+        type: "POST",
+    })
+    .done(function(data){
+        let obj = JSON.parse(data);
+        let length = obj[3];
+        let tbody = document.getElementById("show");
+        for(i = 0; i < length; i++){
+            let tr = document.createElement("tr");
+            let input = document.createElement("input");
+            input.value = obj[0][i];
+            input.type = "text";
+            input.disabled = "true";
+            let th1 = document.createElement("th");
+            let th2 = document.createElement("th");
+            let th3 = document.createElement("th");
+            th1.appendChild(input);
+            th2.innerHTML = obj[1][i];
+            th3.innerHTML = obj[2][i];
+            tr.appendChild(th1);
+            tr.appendChild(th2);
+            tr.appendChild(th3);
+            tbody.appendChild(tr);
+        }
+    })
 }
 
 function check(){
@@ -69,6 +96,9 @@ function check(){
     str = str.split("=");
     let year = str[2];
     let arr = [];
+    if(year == "your"){
+        year = 200;
+    }
     console.log(year);
     $("input").each(function(){
         arr.push($(this).val());
