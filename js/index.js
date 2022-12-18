@@ -9,7 +9,6 @@ $(document).ready(function() {
         $.post("php/logout.php", null, function(data, status) {
             alert("以登出，請重新登入");
             location.href = "http://localhost/workSpace/web_project/login.html";
-
         });
     })
 });

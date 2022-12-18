@@ -37,7 +37,10 @@ function translate(){
 
 }
 function add(){
-
+    console.log("add");
+    var enText = $("#en_word").val();
+    var zhText = $("#zh_word").val();
+    if(enText == "" || zhText == "") alert("請先翻譯完成後再加入列表");
 }
 function clear(){
     $("#en_word").val("");
