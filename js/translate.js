@@ -2,8 +2,22 @@ $(document).ready(function(){
     $("#translate").click(function(){translate();});
     $("#add").click(function(){add();});
     $("#clear").click(function(){clear();});
+    $("#delete").click(function(){
+        del();
+    });
 });
 
+function del(){
+    var enText = $("#en_word").val();
+    $.ajax({
+        url: "http://localhost/workSpace/web_project/php/delV.php",
+        type: "POST",
+        data: {"en" : enText},
+    })
+    .done(function(data){
+        console.log(data);
+    })
+}
 
 function translate(){
 
@@ -51,7 +65,6 @@ function add(){
         })
         .done(function(data){
             console.log(data);
-            location.reload();
         })
     }
 }
