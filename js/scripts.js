@@ -1,12 +1,3 @@
-/*!
-* Start Bootstrap - Simple Sidebar v6.0.5 (https://startbootstrap.com/template/simple-sidebar)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
-*/
-// 
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -26,45 +17,37 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 jQuery(document).ready(function($){ 
-    var $form_modal = $('.translate_div'), 
-     // $form_login = $form_modal.find('#cd-login'), 
-     // $form_signup = $form_modal.find('#cd-signup'), 
-     // $form_modal_tab = $('.cd-switcher'), 
-     // $tab_login = $form_modal_tab.children('li').eq(0).children('a'), 
-     // $tab_signup = $form_modal_tab.children('li').eq(1).children('a'), 
-      $main_nav = $('.translate_button'); 
-   
+    var $form_modal_trans = $('.translate_div');
+
+    $main_nav_trans = $('.translate_button'); 
+
     //彈出視窗 
-    $main_nav.on('click', function(event){ 
-      //console.log("pop");
-      //if( $(event.target).is($main_nav) ) { 
-        // on mobile open the submenu 
-        //console.log( $(this).children('ul'));
-        //$(this).children('ul').toggleClass('is-visible'); 
-      //} else { 
-        // on mobile close submenu 
-        $main_nav.children('ul').removeClass('is-visible'); 
-        //show modal layer 
-        $form_modal.addClass('is-visible');   
-        //show the selected form 
-        //( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected(); 
-      //} 
-   
+    $main_nav_trans.on('click', function(event){ 
+        $main_nav_trans.children('ul').removeClass('is-visible'); 
+        $form_modal_trans.addClass('is-visible');   
     }); 
-    $("#return").click(function(){
-        $form_modal.removeClass('is-visible'); 
-    })
+
     //關閉彈出視窗 
+    $("#return").click(function(){
+        $form_modal_trans.removeClass('is-visible'); 
+    })
+    //按下div外頁面
     $('.translate_div').on('click', function(event){ 
-      if( $(event.target).is($form_modal) || $(event.target).is('.cd-close-form') ) { 
-        $form_modal.removeClass('is-visible'); 
+      if( $(event.target).is($form_modal_trans) || $(event.target).is('.cd-close-form') ) { 
+        $form_modal_trans.removeClass('is-visible'); 
       }   
     }); 
     //使用Esc鍵關閉彈出視窗 
     $(document).keyup(function(event){ 
       if(event.which=='27'){ 
-        $form_modal.removeClass('is-visible'); 
+        $form_modal_trans.removeClass('is-visible'); 
       } 
     }); 
    
-  }); 
+    $('#drop').click(function(event) {
+      event.preventDefault();
+      $(this).toggleClass('active');
+      $(this).siblings('ul').slideToggle(1000);
+    });
+
+ }); 

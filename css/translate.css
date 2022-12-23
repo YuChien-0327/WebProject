@@ -1,4 +1,4 @@
-.translate_div {
+.translate_div, .music_div {
     color: rgb(140, 106, 140);
     position: fixed; 
     top: 0; 
@@ -15,14 +15,14 @@
     -moz-transition: opacity 0.3s 0, visibility 0 0.3s; 
     transition: opacity 0.3s 0, visibility 0 0.3s; 
 } 
-.translate_div.is-visible { 
+.translate_div.is-visible, .music_div.is-visible { 
     visibility: visible; 
     opacity: 1; 
     -webkit-transition: opacity 0.3s 0, visibility 0 0; 
     -moz-transition: opacity 0.3s 0, visibility 0 0; 
     transition: opacity 0.3s 0, visibility 0 0; 
 } 
-.translate_div .translate_txt { 
+.translate_div .translate_txt, .music_div .music_txt { 
     background-color: rgb(236, 230, 255);
     -webkit-transform: translateY(0); 
     -moz-transform: translateY(0); 
@@ -31,7 +31,7 @@
     transform: translateY(0); 
 } 
 
-.translate_txt { 
+.translate_txt, .music_txt { 
     position: relative; 
     width: 90%; 
     max-width: 600px; 

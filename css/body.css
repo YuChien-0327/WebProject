@@ -48,9 +48,50 @@ input[type="text"]:focus,  input[type="password"]:focus {
     font-size: 1rem;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+}
 
-  .btn:hover {
+.btn:hover {
     font-weight: bold;
     background-color: rgba(248, 222, 141, 255);
-  }
+}
+
+.year{
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+}
+
+.year li{
+    border: 1px solid rgb(229, 223, 255);
+    background-color: white;
+    width: 100%;   
+}
+
+.year li:hover{
+    font-weight: bold;
+    background-color: rgba(248, 222, 141, 255);
+}
+
+.year li a {
+    color: rgb(140, 106, 140);
+    text-decoration: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.queue__item:before, .queue__title, .queue__hide, .info__thumb, .info__wrapper, .info, .timeline__progress-wrapper:after, .timeline__passtime:after, .timeline__duration:after, .timeline__passtime, .timeline__duration, .timeline__progress-wrapper, .timeline, .player__item:before, .player__item i, .player__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+body {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
