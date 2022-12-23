@@ -3,7 +3,7 @@ require_once "conn.php";
 session_start();
 $en = $_POST['en'];
 $zh = $_POST['zh'];
-$sql = "SELECT * FROM `your` WHERE `in_english` = '{$en}'";
+$sql = "SELECT * FROM `your` WHERE `in_english` = '{$en}' AND `user_id` = '{$_SESSION['id']}'";
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0){
     echo "單字已存在";
