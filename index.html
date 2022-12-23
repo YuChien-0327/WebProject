@@ -5,8 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
         <script src="js/translate.js"></script>        
         <script src="js/index.js"></script>
+        <script src="js/music.js"></script>
         <meta name="author" content="" />
         <title>學測英文單字抱佛腳</title>
         <!-- Favicon-->
@@ -15,6 +18,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/translate.css" rel="stylesheet" />
         <link href="css/body.css" rel="stylesheet" />
+        <link href="css/music.css" rel="stylesheet" />
 
     </head>
     <body>
@@ -25,7 +29,9 @@
                     <img src="img/system.png" style="width: 150px;">
                 </div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action p-3 translate_button">translate</a>
+
+
+                    <a class="list-group-item list-group-item-action p-3 translate_button">Translate</a>
                     <div class="translate_div"> 
                         <div class="translate_txt">
                             <div align="center">
@@ -42,16 +48,20 @@
                         </div>
                     </div> 
                     <a class="list-group-item list-group-item-action p-3" id="your">Other</a>
-                    <a class="list-group-item list-group-item-action p-3" id="109">109</a>
-                    <a class="list-group-item list-group-item-action p-3" id="108">108</a>
-                    <a class="list-group-item list-group-item-action p-3" id="107">107</a>
-                    <a class="list-group-item list-group-item-action p-3" id="106">106</a>
-                    <a class="list-group-item list-group-item-action p-3" id="105">105</a>
-                    <a class="list-group-item list-group-item-action p-3" id="104">104</a>
-                    <a class="list-group-item list-group-item-action p-3" id="103">103</a>
-                    <a class="list-group-item list-group-item-action p-3" id="102">102</a>
-                    <a class="list-group-item list-group-item-action p-3" id="101">101</a>
-                    <a class="list-group-item list-group-item-action p-3" id="100">100</a>
+                    <a class="list-group-item list-group-item-action p-3" id="drop">Year</a>
+                    <ul class="year">
+                        <li><a id="109">109 year</a></li>
+                        <li><a id="108">108 year</a></li>
+                        <li><a id="107">107 year</a></li>
+                        <li><a id="106">106 year</a></li>
+                        <li><a id="105">105 year</a></li>
+                        <li><a id="104">104 year</a></li>
+                        <li><a id="103">103 year</a></li>
+                        <li><a id="102">102 year</a></li>
+                        <li><a id="101">101 year</a></li>
+                        <li><a id="100">100 year</a></li>
+                    </ul>                          
+ 
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -90,6 +100,81 @@
                         <code>#sidebarToggle</code>
                         ID which will toggle the menu when clicked.
                     </p>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+
+            <div class="player">
+                <div class="player__wrapper">
+                  <div class="player__prev-work player__item">
+                    <img class="icon" src="img/left.png" id="prev">
+                </div>
+                <div class="player__play player__item">
+                    <img class="icon" src="img/play.png" id="gogo">
+                </div>
+                <div class="player__next-work player__item">
+                    <img class="icon" src="img/right.png" id="next">
+                </div>
+                <div class="player__shuffle player__item">
+                    <img class="icon" src="img/shuffle.png" id="shuffle">
+                </div>
+                <div class="player__repeat player__item">
+                    <img class="icon" src="img/repeat.png" id="repeat">
+                </div>
+                <div class="player__timeline player__item">
+                <div class="timeline"><span class="timeline__passtime" id="passtime">00:00:00</span>
+                    <div class="timeline__progress-wrapper">
+                    <div class="timeline__progress-bg" id="timeline-bg"></div>
+                    <div class="timeline__progress-bar" id="timeline-bar"></div>
+                    <div class="timeline__progress-handle" id="timeline-handle"></div>
+                    </div><span class="timeline__duration" id="duration">00:10:59</span>
+                </div>
+                </div>
+                <div class="player__volume player__item">
+                    <img class="icon" src="img/voice.png" id="volume"> 
+                    <div class="volume">
+                        <div class="volume__wrapper hidden" id="volume-wrapper">
+                            <div class="volume__progress-bg" id="volume_bg"></div>
+                            <div class="volume__progress-bar" id="volume_bar"></div>
+                            <div class="volume__progress-handle" id="volume_handle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player__info player__item">
+                    <div class="info">
+                        <img class="info__thumb info_img" id="current-thumb" src=""/>
+                        <div class="info__wrapper">
+                            <p class="info__author" id="current-author" title="Front End Happy Hour">Front End Happy Hour</p><span class="info__name" id="current-name">Episode 066 - Type systems - a static drink list</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player__queue player__item">
+                    <img class="icon" src="img/playlist.png" id="queue">
+                    <div class="queue">
+                        <div class="queue__wrapper hidden" id="queue-wrapper">
+                            <div class="queue__panel">
+                                <p class="queue__title">Change music</p>
+                                <div class="queue__hide">
+                                    <img class="icon" src="img/close.png" id="queue-close">
+                                </div>
+                            </div>
+                            <div class="queue__playlist" id="playlist">
+                                <div class="queue__item">
+                                    <div class="info"><img class="info__thumb" src="https://i1.sndcdn.com/artworks-000406637742-g6nq0a-t120x120.jpg"/>
+                                        <div class="info__wrapper"><a class="info__author" href="/front-end-happy-hour" title="Front End Happy Hour">Front End Happy Hour</a><span class="info__name">Episode 066 - Type systems - a static drink list</span></div>
+                                    </div>
+                                </div>
+                                <div class="queue__item">
+                                    <div class="info"><img class="info__thumb" src="https://i1.sndcdn.com/artworks-000406637742-g6nq0a-t120x120.jpg"/>
+                                        <div class="info__wrapper"><a class="info__author" href="/front-end-happy-hour" title="Front End Happy Hour">Front End Happy Hour</a><span class="info__name">Episode 066 - Type systems - a static drink list</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
